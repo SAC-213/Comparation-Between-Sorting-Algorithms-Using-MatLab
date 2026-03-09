@@ -46,6 +46,7 @@ int main(int argc, char *argv[])
 //uswtime(&utime1, &stime1, &wtime1);
 //******************************************************************
     Destroy_Heap(&H);
+    free(A);
 //***************************************************************************************************	
 //Cálculo del tiempo de ejecución del programa
 //	printf("\n");
