@@ -6,3 +6,5 @@ This repository provides two different implementations for each sorting algorith
 2. **Visualization** – Demonstrates how the algorithm sorted an array.
 
 Each algorithm includes a `Compilation.txt` file. Follow the instructions in these files to compile and run the programs correctly.
+
+# This it´s too heavy ma boy
