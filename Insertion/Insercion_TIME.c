@@ -2,7 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-/* Ordenamiento por Inserci髇 */
+//**************************************************
+// Librer铆a utilizada para medir el tiempo de ejecuci贸n
+// del algoritmo utilizando la funci贸n clock()
+//**************************************************
+
+/* Ordenamiento por Inserci贸n */
 void insercion(int *A, int n) {
     int i;
     for (i = 1; i < n; i++) {
@@ -19,6 +24,9 @@ void insercion(int *A, int n) {
 }
 
 int main(int argc, char *argv[]) {
+//********************************************************
+// Variables necesarias para medir el tiempo de ejecuci贸n
+//********************************************************
 
     if (argc != 2) {
         printf("Uso: %s n\n", argv[0]);
@@ -32,12 +40,21 @@ int main(int argc, char *argv[]) {
     for (i = 0; i < n; i++)
         scanf("%d", &A[i]);
 
+//******************************************************************	
+// Iniciar el conteo del tiempo antes de ejecutar el algoritmo
+//******************************************************************
     clock_t inicio = clock();
 
     insercion(A, n);
 
+//******************************************************************	
+// Finalizar la medici贸n del tiempo de ejecuci贸n
+//******************************************************************
     clock_t fin = clock();
 
+//***************************************************************************************************	
+// C谩lculo del tiempo total de ejecuci贸n del algoritmo
+//***************************************************************************************************
     double tiempo = (double)(fin - inicio) / CLOCKS_PER_SEC;
 
     printf("Insercion n=%d tiempo=%.6f segundos\n", n, tiempo);
@@ -45,3 +62,4 @@ int main(int argc, char *argv[]) {
     free(A);
     return 0;
 }
+
