@@ -61,6 +61,7 @@ return 0;
 void bubbleop2 (int A[],int n){
     int i,j,aux;
     int cambios = 1;
+	i = 0;
     while(i<=n-2 && cambios != 0){
         cambios = 0;
         for(j=0;j<=(n-2)-i;j++){
