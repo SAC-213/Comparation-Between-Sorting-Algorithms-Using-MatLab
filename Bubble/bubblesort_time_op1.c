@@ -55,11 +55,13 @@ int main(int argc, char *argv[])
 	printf("CPU/Wall   %.10f %% \n",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0));
 	printf("\n");
 //***************************************************************************************************	
+return 0;
 }
+
 void bubbleop1 (int A[],int n){
     int i,j,aux;
     for(i=0;i<=n-2;i++){
-        for(j=0;j<=n-2;j++){
+        for(j=0;j<=(n-2)-i;j++){
             if(A[j] > A[j+1]){
                 aux = A[j];
                 A[j] = A[j+1];
