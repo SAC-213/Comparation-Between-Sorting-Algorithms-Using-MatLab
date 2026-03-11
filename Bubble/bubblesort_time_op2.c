@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "tiempo.h"
 
 //**************************************************
 //Libreria necesaria para medir rendimiento en Linux
 #include "tiempo.h"
 //**************************************************
-
-void bubble (int A[],int n);
-
+void bubbleop2(int A[], int n);
 int main(int argc, char *argv[])
 {
 //********************************************************
@@ -32,10 +31,10 @@ int main(int argc, char *argv[])
 //Iniciar el conteo del tiempo para las evaluaciones de rendimiento
 uswtime(&utime0, &stime0, &wtime0);
 //******************************************************************
-    bubble(A,n);
+    bubbleop2(A,n);
 //******************************************************************	
 //Evaluar los tiempos de ejecución 
-uswtime(&utime1, &stime1, &wtime1);
+//uswtime(&utime1, &stime1, &wtime1);
 //******************************************************************
     free(A);
 //***************************************************************************************************	
@@ -55,19 +54,23 @@ uswtime(&utime1, &stime1, &wtime1);
 	printf("sys (Tiempo en acciónes de E/S)  %.10e s\n",  stime1 - stime0);
 	printf("CPU/Wall   %.10f %% \n",100.0 * (utime1 - utime0 + stime1 - stime0) / (wtime1 - wtime0));
 	printf("\n");
-//***************************************************************************************************
+//***************************************************************************************************	
 return 0;
 }
 
-void bubble (int A[],int n){
+void bubbleop2 (int A[],int n){
     int i,j,aux;
-    for(i=0;i<=n-2;i++){
-        for(j=0;j<=n-2;j++){
+    int cambios = 1;
+    while(i<=n-2 && cambios != 0){
+        cambios = 0;
+        for(j=0;j<=(n-2)-i;j++){
             if(A[j] > A[j+1]){
                 aux = A[j];
                 A[j] = A[j+1];
                 A[j+1] = aux;
+                cambios = 1;
             }
         }
+        i=i+1;
     }
 }
