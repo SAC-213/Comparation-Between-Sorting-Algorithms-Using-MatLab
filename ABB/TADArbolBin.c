@@ -22,7 +22,7 @@ void Destruir(arbolBinario *a)
     {
       Destruir(&(*a)->hijoIzq);
     }
-    else if ((*a)->hijoDer != NULL)
+    if ((*a)->hijoDer != NULL)
     {
       Destruir(&(*a)->hijoDer);
     }
